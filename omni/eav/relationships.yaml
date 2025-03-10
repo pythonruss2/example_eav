@@ -1,0 +1,11 @@
+- join_from_view: user_profile
+  join_to_view: company
+  join_type: always_left
+  on_sql: ${user_profile.company_id} = ${company.id}
+  relationship_type: assumed_many_to_one
+
+- join_from_view: custom_profile_fields
+  join_to_view: company
+  join_type: always_left
+  on_sql: ${custom_profile_fields.company_id} = ${company.id}
+  relationship_type: assumed_many_to_one

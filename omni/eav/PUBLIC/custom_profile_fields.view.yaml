@@ -1,0 +1,83 @@
+# Reference this view as custom_profile_fields
+schema: PUBLIC
+table_name: CUSTOM_PROFILE_FIELDS
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    hidden: true
+    primary_key: true
+
+  company_id:
+    sql: '"COMPANY_ID"'
+    format: ID
+    # hidden: true
+
+  user_id:
+    sql: '"USER_ID"'
+    format: ID
+    # hidden: true
+
+  field_name:
+    sql: '"FIELD_NAME"'
+    hidden: true
+
+  data_type:
+    sql: '"DATA_TYPE"'
+    hidden: true
+
+  value:
+    sql: '"VALUE"'
+    hidden: true
+
+  string_value:
+    sql: |
+      CASE 
+        WHEN ${data_type} = 'varchar' THEN ${value}
+        ELSE NULL
+      END
+    hidden: true
+
+  numeric_value:
+    sql: |
+      CASE 
+        WHEN ${data_type} = 'number' THEN CAST(${value} as INTEGER)
+        ELSE NULL
+      END
+    hidden: true
+
+  date_value:
+    sql: |
+      CASE 
+        WHEN ${data_type} = 'datetime' THEN CAST(${value} as DATETIME)
+        ELSE NULL
+      END
+    hidden: true
+
+  boolean_value:
+    sql: |
+      CASE 
+        WHEN ${data_type} = 'boolean' THEN 
+          CASE
+            WHEN ${value} = 'True' THEN True
+            WHEN ${value} = 'False' THEN False
+          ELSE NULL END
+        ELSE NULL
+      END
+    hidden: true
+
+measures:
+  is_active:
+    sql: ${boolean_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: is_active
+
+  headcount:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: headcount

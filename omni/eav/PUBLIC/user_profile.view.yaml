@@ -1,0 +1,29 @@
+# Reference this view as user_profile
+schema: PUBLIC
+table_name: USER_PROFILE
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  first_name:
+    sql: '"FIRST_NAME"'
+
+  last_name:
+    sql: '"LAST_NAME"'
+
+  email:
+    sql: '"EMAIL"'
+
+  company_id:
+    sql: '"COMPANY_ID"'
+    format: ID
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+measures:
+  count:
+    aggregate_type: count

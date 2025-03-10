@@ -1,0 +1,43 @@
+# Reference this view as company
+schema: PUBLIC
+table_name: COMPANY
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  name:
+    sql: '"NAME"'
+
+  billing_address:
+    sql: '"BILLING_ADDRESS"'
+
+  billing_address2:
+    sql: '"BILLING_ADDRESS2"'
+
+  billing_city:
+    sql: '"BILLING_CITY"'
+
+  billing_state:
+    sql: '"BILLING_STATE"'
+
+  billing_zip:
+    sql: '"BILLING_ZIP"'
+
+  billing_county:
+    sql: '"BILLING_COUNTY"'
+
+  headcount:
+    sql: '"HEADCOUNT"'
+
+  website:
+    sql: '"WEBSITE"'
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+measures:
+  count:
+    aggregate_type: count
