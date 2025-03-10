@@ -1,1 +1,7 @@
-{}
+access_grants:
+  cid_1:
+    user_attribute: company_id
+    allowed_values: [ "1" ]
+  cid_2:
+    user_attribute: company_id
+    allowed_values: [ "2" ]

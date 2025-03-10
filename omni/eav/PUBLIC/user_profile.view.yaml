@@ -21,6 +21,11 @@ dimensions:
     sql: '"COMPANY_ID"'
     format: ID
 
+  company_id_str:
+    sql: CAST(COMPANY_ID as varchar)
+    format: ID
+    hidden: true
+
   created_date:
     sql: '"CREATED_DATE"'
 

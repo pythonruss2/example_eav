@@ -1,3 +1,4 @@
+hidden: true
+
 # this is the custom_profile_fields topic
-joins:
-  company: {}
+joins: {}

@@ -1,3 +1,9 @@
+- join_from_view: custom_profile_fields
+  join_to_view: flattened_fields
+  join_type: always_left
+  on_sql: ${custom_profile_fields.user_id} = ${flattened_fields.user_id}
+  relationship_type: many_to_one
+
 - join_from_view: user_profile
   join_to_view: company
   join_type: always_left

@@ -14,6 +14,11 @@ dimensions:
     format: ID
     # hidden: true
 
+  company_id_str:
+    sql: CAST("COMPANY_ID" AS VARCHAR)
+    format: ID
+    hidden: true
+
   user_id:
     sql: '"USER_ID"'
     format: ID
@@ -21,11 +26,11 @@ dimensions:
 
   field_name:
     sql: '"FIELD_NAME"'
-    hidden: true
+    # hidden: true
 
   data_type:
     sql: '"DATA_TYPE"'
-    hidden: true
+    # hidden: true
 
   value:
     sql: '"VALUE"'
@@ -34,7 +39,7 @@ dimensions:
   string_value:
     sql: |
       CASE 
-        WHEN ${data_type} = 'varchar' THEN ${value}
+        WHEN ${data_type} = 'string' THEN ${value}
         ELSE NULL
       END
     hidden: true
@@ -68,16 +73,51 @@ dimensions:
     hidden: true
 
 measures:
-  is_active:
+  c1_is_active:
     sql: ${boolean_value}
     aggregate_type: max
     filters:
       field_name:
         is: is_active
 
-  headcount:
+  c1_headcount:
     sql: ${numeric_value}
     aggregate_type: max
     filters:
       field_name:
         is: headcount
+
+  c1_created_date:
+    sql: ${date_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: created_date
+
+  c1_goal:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: goal
+
+  c2_nickname:
+    sql: ${string_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: nickname
+
+  c2_reports:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: reports
+
+  c2_goal:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: goal
