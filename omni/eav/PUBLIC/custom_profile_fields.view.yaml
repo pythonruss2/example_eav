@@ -22,15 +22,15 @@ dimensions:
   user_id:
     sql: '"USER_ID"'
     format: ID
-    # hidden: true
+    hidden: true
 
   field_name:
     sql: '"FIELD_NAME"'
-    # hidden: true
+    hidden: true
 
   data_type:
     sql: '"DATA_TYPE"'
-    # hidden: true
+    hidden: true
 
   value:
     sql: '"VALUE"'
@@ -71,53 +71,3 @@ dimensions:
         ELSE NULL
       END
     hidden: true
-
-measures:
-  c1_is_active:
-    sql: ${boolean_value}
-    aggregate_type: max
-    filters:
-      field_name:
-        is: is_active
-
-  c1_headcount:
-    sql: ${numeric_value}
-    aggregate_type: max
-    filters:
-      field_name:
-        is: headcount
-
-  c1_created_date:
-    sql: ${date_value}
-    aggregate_type: max
-    filters:
-      field_name:
-        is: created_date
-
-  c1_goal:
-    sql: ${numeric_value}
-    aggregate_type: max
-    filters:
-      field_name:
-        is: goal
-
-  c2_nickname:
-    sql: ${string_value}
-    aggregate_type: max
-    filters:
-      field_name:
-        is: nickname
-
-  c2_reports:
-    sql: ${numeric_value}
-    aggregate_type: max
-    filters:
-      field_name:
-        is: reports
-
-  c2_goal:
-    sql: ${numeric_value}
-    aggregate_type: max
-    filters:
-      field_name:
-        is: goal

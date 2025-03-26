@@ -1,0 +1,24 @@
+# Reference this view as c2_profile_fields
+extends: [ custom_profile_fields ]
+
+measures:
+  nickname:
+    sql: ${string_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: nickname
+
+  reports:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: reports
+
+  goal:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: goal

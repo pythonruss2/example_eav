@@ -1,0 +1,32 @@
+# Reference this view as c1_profile_fields
+# schema: customer_1
+extends: [ custom_profile_fields ]
+
+measures:
+  is_active:
+    sql: ${boolean_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: is_active
+
+  headcount:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: headcount
+
+  created_date:
+    sql: ${date_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: created_date
+
+  goal:
+    sql: ${numeric_value}
+    aggregate_type: max
+    filters:
+      field_name:
+        is: goal

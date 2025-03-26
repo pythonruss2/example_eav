@@ -5,50 +5,12 @@ schema: PUBLIC
 query:
   fields:
     custom_profile_fields.user_id: user_id
-    custom_profile_fields.c1_goal: c1_goal
-    custom_profile_fields.c1_headcount: c1_headcount
-    custom_profile_fields.c1_is_active: c1_is_active
-    custom_profile_fields.c1_created_date: c1_created_date
-    custom_profile_fields.c2_goal: c2_goal
-    custom_profile_fields.c2_nickname: c2_nickname
-    custom_profile_fields.c2_reports: c2_reports
   base_view: custom_profile_fields
   filters:
     custom_profile_fields.company_id_str:
       bind: user_profile.company_id_str
-  sorts:
-    - field: custom_profile_fields.c1_created_date
-      desc: true
   topic: custom_profile_fields
 
 dimensions:
-  c2_goal:
-    label: Goal
-    required_access_grants: [ cid_2 ]
-
-  c2_nickname:
-    label: Nickname
-    required_access_grants: [ cid_2 ]
-
-  c2_reports:
-    label: Reports
-    required_access_grants: [ cid_2 ]
-
   user_id:
     primary_key: true
-
-  c1_goal:
-    label: Goal
-    required_access_grants: [ cid_1 ]
-
-  c1_headcount:
-    label: Headcount
-    required_access_grants: [ cid_1 ]
-
-  c1_is_active:
-    label: Is Active
-    required_access_grants: [ cid_1 ]
-
-  c1_created_date:
-    label: Profile Created Date
-    required_access_grants: [ cid_1 ]

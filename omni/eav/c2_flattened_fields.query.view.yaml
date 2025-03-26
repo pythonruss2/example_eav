@@ -1,0 +1,28 @@
+# Reference this view as c2_flattened_fields
+required_access_grants: [ cid_2 ]
+
+extends: [ flattened_fields ]
+query:
+  fields:
+    c2_profile_fields.user_id: user_id
+    c2_profile_fields.goal: goal
+    c2_profile_fields.nickname: nickname
+    c2_profile_fields.reports: reports
+  base_view: c2_profile_fields
+  filters:
+    c2_profile_fields.company_id_str:
+      bind: user_profile.company_id_str
+  topic: c2_profile_fields
+
+dimensions:
+  user_id:
+    hidden: true
+
+  goal:
+    label: Goal
+
+  nickname:
+    label: Nickname
+
+  reports:
+    label: Reports

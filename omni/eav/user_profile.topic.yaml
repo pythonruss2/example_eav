@@ -5,12 +5,20 @@ access_filters:
 
 joins:
   company: {}
-  flattened_fields: {}
+  c1_flattened_fields: {}
+  c2_flattened_fields: {}
 
 relationships:
   - join_from_view: user_profile
-    join_to_view: flattened_fields
+    join_to_view: c1_flattened_fields
     join_type: always_left
-    on_sql: ${user_profile.id} = ${flattened_fields.user_id}
+    on_sql: ${user_profile.id} = ${c1_flattened_fields.user_id}
+    relationship_type: one_to_one
+    join_from_view_as_label: user_profile
+
+  - join_from_view: user_profile
+    join_to_view: c2_flattened_fields
+    join_type: always_left
+    on_sql: ${user_profile.id} = ${c2_flattened_fields.user_id}
     relationship_type: one_to_one
     join_from_view_as_label: user_profile

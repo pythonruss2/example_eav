@@ -1,0 +1,33 @@
+# Reference this view as c1_flattened_fields
+# schema: customer_1
+required_access_grants: [ cid_1 ]
+
+extends: [ flattened_fields ]
+query:
+  fields:
+    c1_profile_fields.user_id: user_id
+    c1_profile_fields.goal: goal
+    c1_profile_fields.headcount: headcount
+    c1_profile_fields.is_active: is_active
+    c1_profile_fields.created_date: created_date
+  base_view: c1_profile_fields
+  filters:
+    c1_profile_fields.company_id_str:
+      bind: user_profile.company_id_str
+  topic: c1_profile_fields
+
+dimensions:
+  user_id:
+    hidden: true
+
+  goal:
+    label: Goal
+
+  headcount:
+    label: Headcount
+
+  is_active:
+    label: Is Active
+
+  created_date:
+    label: Profile Created Date
