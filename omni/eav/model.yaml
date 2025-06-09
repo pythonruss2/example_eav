@@ -17,3 +17,6 @@ access_grants:
   cid_6:
     user_attribute: company_id
     allowed_values: [ "6" ]
+  cid_7:
+    user_attribute: company_id
+    allowed_values: [ "7" ]
