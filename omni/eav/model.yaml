@@ -5,12 +5,3 @@ access_grants:
   cid_2:
     user_attribute: company_id
     allowed_values: [ "2" ]
-  cid_3:
-    user_attribute: company_id
-    allowed_values: [ "3" ]
-  cid_4:
-    user_attribute: company_id
-    allowed_values: [ "4" ]
-  cid_5:
-    user_attribute: company_id
-    allowed_values: [ "5" ]
