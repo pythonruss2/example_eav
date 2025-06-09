@@ -71,3 +71,8 @@ dimensions:
         ELSE NULL
       END
     hidden: true
+
+  test696:
+    sql: OMNI_MAX(${custom_profile_fields.numeric_value})
+    label: cool
+    drill_fields: [ custom_profile_fields.numeric_value ]
