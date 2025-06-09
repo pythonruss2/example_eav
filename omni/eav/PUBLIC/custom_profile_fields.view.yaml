@@ -6,13 +6,13 @@ dimensions:
   id:
     sql: '"ID"'
     format: ID
-    # hidden: true
+    hidden: true
     primary_key: true
 
   company_id:
     sql: '"COMPANY_ID"'
     format: ID
-    # hidden: true
+    hidden: true
 
   company_id_str:
     sql: CAST("COMPANY_ID" AS VARCHAR)
@@ -22,19 +22,19 @@ dimensions:
   user_id:
     sql: '"USER_ID"'
     format: ID
-    # hidden: true
+    hidden: true
 
   field_name:
     sql: '"FIELD_NAME"'
-    # hidden: true
+    hidden: true
 
   data_type:
     sql: '"DATA_TYPE"'
-    # hidden: true
+    hidden: true
 
   value:
     sql: '"VALUE"'
-    # hidden: true
+    hidden: true
 
   string_value:
     sql: |
