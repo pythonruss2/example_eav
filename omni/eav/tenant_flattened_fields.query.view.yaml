@@ -1,7 +1,6 @@
-# Reference this view as flattened_fields
+# Reference this view as tenant_flattened_fields
 label: User Profile
 
-schema: PUBLIC
 query:
   fields:
     custom_profile_fields.user_id: user_id
@@ -13,4 +12,5 @@ query:
 
 dimensions:
   user_id:
+    hidden: true
     primary_key: true

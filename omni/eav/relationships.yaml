@@ -1,9 +1,3 @@
-- join_from_view: custom_profile_fields
-  join_to_view: flattened_fields
-  join_type: always_left
-  on_sql: ${custom_profile_fields.user_id} = ${flattened_fields.user_id}
-  relationship_type: many_to_one
-
 - join_from_view: user_profile
   join_to_view: company
   join_type: always_left
@@ -15,3 +9,10 @@
   join_type: always_left
   on_sql: ${custom_profile_fields.company_id} = ${company.id}
   relationship_type: assumed_many_to_one
+
+- join_from_view: user_profile
+  join_to_view: tenant_flattened_fields
+  join_type: always_left
+  on_sql: ${user_profile.id} = ${tenant_flattened_fields.user_id}
+  relationship_type: one_to_one
+  join_from_view_as_label: user_profile

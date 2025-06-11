@@ -1,22 +1,7 @@
-access_grants:
-  cid_1:
-    user_attribute: company_id
-    allowed_values: [ "1" ]
-  cid_2:
-    user_attribute: company_id
-    allowed_values: [ "2" ]
-  cid_3:
-    user_attribute: company_id
-    allowed_values: [ "3" ]
-  cid_4:
-    user_attribute: company_id
-    allowed_values: [ "4" ]
-  cid_5:
-    user_attribute: company_id
-    allowed_values: [ "5" ]
-  cid_6:
-    user_attribute: company_id
-    allowed_values: [ "6" ]
-  cid_7:
-    user_attribute: company_id
-    allowed_values: [ "7" ]
+dynamic_shared_extensions:
+  - user_attribute: company_id
+    mappings:
+      c1:
+        values_for_model: [ "1" ]
+      c2:
+        values_for_model: [ "2" ]
