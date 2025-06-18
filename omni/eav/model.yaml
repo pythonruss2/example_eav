@@ -5,13 +5,3 @@ dynamic_shared_extensions:
         values_for_model: [ "1" ]
       c2:
         values_for_model: [ "2" ]
-      c3:
-        values_for_model: [ "3" ]
-      c4:
-        values_for_model: [ "4" ]
-      c5:
-        values_for_model: [ "5" ]
-      c6:
-        values_for_model: [ "6" ]
-      c7:
-        values_for_model: [ "7" ]
